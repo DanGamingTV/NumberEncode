@@ -1,3 +1,5 @@
+var encrypted;
+var decrypted;
 function encrypt(textInput) {
 	if (typeof textInput === 'string' || textInput instanceof String) { //check if input is string
 		//Main encrypt function
@@ -33,7 +35,34 @@ document.getElementById("button1").onclick = function() {
 	document.getElementById("result1").innerHTML = decrypt(textArray);
 }
 document.getElementById("button2").onclick = function() {
-	var textVal = document.getElementById("textIn").value;
+	var textVal = document.getElementById("numbersIn").value;
 	var encrypted = encrypt(textVal);
-	document.getElementById("result2").innerHTML = encrypted.join("&#10;");
+	document.getElementById("result1").innerHTML = encrypted.join("&#10;");
+}
+
+function encryptAES(message, key) {
+	if(CryptoJS) {
+		return CryptoJS.AES.encrypt(message, key);
+	} else {
+		throw "CryptoJS is not loaded!";
+	}
+}
+function decryptAES(message, key) {
+	if(CryptoJS) {
+		return CryptoJS.AES.decrypt(message, key);
+	} else {
+		throw "CryptoJS is not loaded!";
+	}
+}
+
+document.getElementById("encrypt_aes").onclick = function() {
+	var textVal = document.getElementById("aes").value;
+	var key = document.getElementById("aes_key").value;
+	document.getElementById("aes").value = encryptAES(textVal, key);
+}
+document.getElementById("decrypt_aes").onclick = function() {
+	var textVal = document.getElementById("aes").value;
+	var key = document.getElementById("aes_key").value;
+	var bytes = decryptAES(textVal, key);
+	document.getElementById("aes").value = bytes.toString(CryptoJS.enc.Utf8);
 }

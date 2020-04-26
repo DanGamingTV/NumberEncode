@@ -3,26 +3,26 @@
 <head>
 <title>Strings to numbers, numbers to strings</title>
 <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+<script src="./js/aes.js"></script>
 </head>
 <body>
+<div>
+<h1>AES encrypt and decrypt</h1>
+<textarea id="aes" placeholder="Text to encrypt/decrypt"></textarea>
+<br>
+<input id="aes_key" placeholder="Encryption Key"></input>
+<button id="encrypt_aes">Encrypt</button><button id="decrypt_aes">Decrypt</button>
+</div>
+<br>
 <h1>Strings to numbers, numbers to strings.</h1>
 <h2>Note: this doesn't encrypt using an algorithm, it just converts characters to corresponding ASCII code.</h2>
 <h2>This would be useful for converting numbers sent over the air to text, and then decrypting that text with a key.</h2>
-<br>
-<h1>Numbers to text</h1>
 <div class="number_to_string">
-<h2>Input numbers, seperated by a newline.</h2>
-<textarea id="numbersIn"></textarea>
-<button id="button1">Decrypt</button>
-<h2>Result: <textarea readonly id="result1"></textarea></h2>
-</div>
+<textarea id="numbersIn" placeholder="Text to encrypt/decrypt"></textarea>
 <br>
-<h1>Text to numbers</h1>
-<div class="string_to_number">
-<h2>Input string</h2>
-<textarea id="textIn"></textarea>
-<button id="button2">Encrypt</button>
-<h2>Result: <textarea readonly id="result2"></textarea></h2>
+<button id="button2">Encrypt</button><button id="button1">Decrypt</button>
+<h2>Result: </h2>
+<textarea readonly id="result1"></textarea>
 </div>
 <script src="./js/script.min.js"></script>
 </body>
