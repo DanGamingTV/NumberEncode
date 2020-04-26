@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strings to numbers, numbers to strings</title>
+<link rel="stylesheet" type="text/css" href="./css/style.min.css">
+</head>
+<body>
+<h1>Strings to numbers, numbers to strings.</h1>
+<h2>Note: this doesn't encrypt using an algorithm, it just converts characters to corresponding ASCII code.</h2>
+<h2>This would be useful for converting numbers sent over the air to text, and then decrypting that text with a key.</h2>
+<br>
+<h1>Numbers to text</h1>
+<div class="number_to_string">
+<h2>Input numbers, seperated by a newline.</h2>
+<textarea id="numbersIn"></textarea>
+<button id="button1">Decrypt</button>
+<h2>Result: <textarea readonly id="result1"></textarea></h2>
+</div>
+<br>
+<h1>Text to numbers</h1>
+<div class="string_to_number">
+<h2>Input string</h2>
+<textarea id="textIn"></textarea>
+<button id="button2">Encrypt</button>
+<h2>Result: <textarea readonly id="result2"></textarea></h2>
+</div>
+<script src="./js/script.min.js"></script>
+</body>
+</html>
